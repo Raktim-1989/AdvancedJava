@@ -1,0 +1,12 @@
+package AppiumDemo.AppiumDemo;
+
+public class ECommerce_TC05 {
+
+	   public double getAmount(String value)
+	   {
+		   value = value.substring(1);
+		   double amountValue = Double.parseDouble(value);
+		   return amountValue;
+	   }
+	
+}

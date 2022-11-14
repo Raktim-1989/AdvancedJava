@@ -1,0 +1,29 @@
+package com.qa.graphql;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+
+
+public class GraphQlQueryTest {
+	
+	
+	@Test
+	public void getAllFilmsTest()
+	{
+		
+		//https://swapi-graphql.netlify.app/.netlify/functions/index
+		RestAssured.baseURI = "https://swapi-graphql.netlify.app";
+		String body = "{\"query\":\"{\\n  allFilms\\n  {\\n    films\\n    {\\n      title\\n    }\\n  }\\n  \\n}\",\"operationName\":null}";
+		
+		
+		
+		
+		
+		
+	}
+
+}

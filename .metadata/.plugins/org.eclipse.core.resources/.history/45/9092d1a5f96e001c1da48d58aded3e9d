@@ -1,0 +1,25 @@
+package Framework.ExcelDrivenAPI;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+
+public class LibraryAPI {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		RestAssured.baseURI = "http://216.10.245.166";
+		
+		Response res = given().header("Content-Type", "application/json")
+		.body("{\r\n\"name\":\"Learn RESTAPI Automation with Java\",\r\n\"isbn\":\"asdr\",\r\n\"aisle\":\"222\",\r\n\"author\":\"John foe\"\r\n}")
+		.when().post("/Library/Addbook.php")
+		.then().assertThat().statusCode(200).extract().response();
+		
+		   String id = Utils.getJsonPath(res, "ID");
+		    System.out.println(id);
+
+	}
+
+}

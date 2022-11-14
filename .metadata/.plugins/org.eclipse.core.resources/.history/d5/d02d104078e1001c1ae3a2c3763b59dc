@@ -1,0 +1,14 @@
+
+public class EmulateNetworkSpeed {
+
+	/*
+	 * How to emulate network speeds with selenium chromedevTools integration
+	 * 
+	 */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

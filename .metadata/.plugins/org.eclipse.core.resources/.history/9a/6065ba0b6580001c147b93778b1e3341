@@ -1,0 +1,13 @@
+package storedfunctiontesting;
+
+public class SFTesting {
+	
+	@BeforeClass
+	void setUp()
+	{
+		
+	}
+	
+	
+
+}

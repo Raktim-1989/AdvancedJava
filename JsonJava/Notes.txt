@@ -1,0 +1,12 @@
+###########
+This test is very useful for cross validation between front-end webpage with back-end API
+
+In an web-page , if there is a webtable , where using .getText() we will retrieve the content // i.e.e appium 
+now, in back end , we will be having one input JSON , using a URL, we will get a response
+
+now from that API response, we will do the following --->>>
+convert that response JSON into Java objects and using getter & setter methods , we will retrieve the values
+
+then compare this back-end data with front end selenium values !!
+
+############

@@ -1,0 +1,57 @@
+package AppiumDemo.AppiumDemo;
+
+import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+
+public class ECommerce_TC04 extends ECommerce_Base{
+
+	public static void main(String[] args) throws MalformedURLException {
+		
+		/*
+		 * This Test Case defines the following 
+		 * Fill up the form details 
+		 * Shop the item in the app by scrolling to specific product and add To Cart
+		 * Validate if items selected in Page 2 are matching with items displayed in check out page
+		 * Validate the total Amount displayed in the checkout page matches with sum of product amounts selected for shopping
+		 * Validate mobile gestures working for Links (long Press) and navigate to WebView
+		 */
+
+		AndroidDriver<AndroidElement> driver = capabilities();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Hello");
+		driver.hideKeyboard();
+		driver.findElement(By.xpath("//*[@text='Female']")).click();
+		//dropDown handling
+		driver.findElement(By.id("android:id/text1")).click();
+		//scroll till a particular element inside dropDown
+		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Argentina\"))");
+		//another option for scrolling, if the above doesn't work do the below code
+		//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textMatches(\"Argentina\").instance(0))");
+		driver.findElement(By.xpath("//*[@text='Argentina']")).click();
+		driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();
+		
+		//clicking 'add To Cart' button for the first 2 products 
+		driver.findElements(By.xpath("//*[@text() = 'ADD TO CART']")).get(0).click();
+		driver.findElements(By.xpath("//*[@text() = 'ADD TO CART']")).get(0).click();  //it is same get(0) because once the above item is add to cart. the text changes to 'added to cart' and this time if we use get(1) there is only 1 time with this text..
+		
+		driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
+		
+		//Validating the total amount
+		String amount1 = driver.findElements(By.id("com.androidsample.generalstore:id/productPrice")).get(0).getText();  //output $120.0
+		amount1 = amount1.substring(1);  //120.0
+		
+		String amount2 = driver.findElements(By.id("com.androidsample.generalstore:id/productPrice")).get(1).getText();  //output $140.0
+		amount2 = amount2.substring(1);  //140.0
+		
+		
+
+	}
+
+}

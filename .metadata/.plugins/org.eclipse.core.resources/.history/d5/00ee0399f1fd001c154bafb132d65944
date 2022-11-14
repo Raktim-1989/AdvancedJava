@@ -1,0 +1,16 @@
+package com.qa.builder;
+
+
+public class TestUser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	User u = User.builder().name("Tom").age(20).build();
+	System.out.println(u.getAge()  + u.getName());
+	
+		                                      
+		
+	}
+
+}

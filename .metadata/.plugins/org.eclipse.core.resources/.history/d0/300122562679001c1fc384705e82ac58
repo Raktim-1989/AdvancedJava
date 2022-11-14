@@ -1,0 +1,30 @@
+package sdet;
+
+class Base
+{
+	public void test()
+	{
+		System.out.println("test base called");
+	}
+	
+	public void test1()
+	{
+		System.out.println("test1 base called");
+	}
+}
+public class Test1 extends Base{
+	
+	public void test2()
+	{
+		System.out.println("test2 child called");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+
+	}
+
+}

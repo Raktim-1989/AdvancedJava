@@ -1,0 +1,21 @@
+package sdet;
+
+
+public class Test1 {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String name = "my name is raktim";
+		String[] words = name.split("\\s");
+		for(String w : words)
+		{
+			System.out.println(w + "\\n");
+		}
+		
+		
+
+	}
+
+}

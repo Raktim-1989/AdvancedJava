@@ -1,0 +1,10 @@
+package AppiumDemo.AppiumDemo;
+
+public class GesturesAppium {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.qa.graphql;
+
+public class GraphQlQueryTest {
+
+}

@@ -1,0 +1,21 @@
+package com.qa.builder;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+
+@Getter
+public class Person {
+	
+	String name;
+	int age;
+	boolean isActive;
+	String roll;
+	
+	public Person(String name , int age)
+	{
+		this.name = name;
+		this.age = age;
+	}
+
+}

@@ -1,0 +1,43 @@
+package AppiumDemo.AppiumDemo;
+
+import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+
+import static io.appium.java_client.touch.TapOptions.tapOptions;
+import static io.appium.java_client.touch.offset.ElementOption.element;
+import static io.appium.java_client.touch.LongPressOptions.longPressOptions;
+import static java.time.Duration.ofSeconds;
+
+public class GesturesAppium extends Base {
+
+	public static void main(String[] args) throws MalformedURLException, InterruptedException {
+		
+		AndroidDriver<AndroidElement> driver = capabilities();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//android.widget.TextView[@text= 'Views']")).click();
+		WebElement expandList = driver.findElement(By.xpath("//android.widget.TextView[@text= 'Expandable Lists']"));
+		
+		TouchAction t = new TouchAction(driver);
+		t.tap(tapOptions().withElement(element(expandList))).perform();   
+		WebElement customAdapter = driver.findElement(By.xpath("//android.widget.TextView[@text= '1. Custom Adapter']"));
+		customAdapter.click();
+		
+		//longpress an element
+		WebElement peopleNames = driver.findElement(By.xpath("//android.widget.TextView[@text= 'People Names']"));
+		t.longPress(longPressOptions().withElement(element(peopleNames)).withDuration(ofSeconds(2))).release().perform();
+		Thread.sleep(3000);
+		Boolean flag = driver.findElement(By.id("android:id/title")).isDisplayed();
+		System.out.println("LongPress Element is displayed  " + flag );
+		
+	}
+
+
+
+}

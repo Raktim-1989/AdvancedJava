@@ -1,0 +1,35 @@
+package dockerselenium;
+
+import org.testng.annotations.Test;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Test;
+
+
+public class ChromeStandAloneTest {
+
+	
+	@Test
+	public void getTest()
+	{
+		// TODO Auto-generated method 
+		URL url = null;
+		try {
+			url = new URL("http://localhost:4444/wd/hub");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		DesiredCapabilities cap = DesiredCapabilities.chrome();
+		RemoteWebDriver driver = new RemoteWebDriver(url, cap);
+		driver.get("http://cricbuzz.com");
+	    System.out.println(driver.getTitle());	
+	    
+	}
+
+	
+
+}

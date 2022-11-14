@@ -1,0 +1,14 @@
+
+public class BlockNetworkRequests {
+
+	
+	/*
+	 * Block Network requests calls to speed up the Execuiton with Selenium
+	 * 
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

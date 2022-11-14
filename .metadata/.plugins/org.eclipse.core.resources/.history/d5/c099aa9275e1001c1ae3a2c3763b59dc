@@ -1,0 +1,16 @@
+
+public class BlockNetworkRequests {
+
+	
+	/*
+	 * Block Network requests calls to speed up the Execution with Selenium
+	 * Block the network request API calls so that it can't reach to the server like CSS loading and all 
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+
+	}
+
+}
